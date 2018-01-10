@@ -1,0 +1,18 @@
+---
+- hosts: local
+  tasks:
+    - name: install python3
+      apt:
+        name: python3
+        state: latest
+      become: yes
+    - name: install pip packages django
+      pip:
+        name: django
+        version: 1.7
+      become: yes
+    - name: install pip package selenium
+      pip:
+        name: selenium
+        state: latest
+  become: yes
